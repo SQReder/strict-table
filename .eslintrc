@@ -6,7 +6,11 @@
     "plugin:prettier/recommended",
     "prettier/standard",
     "prettier/react",
-    "plugin:@typescript-eslint/eslint-recommended"
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
   ],
   "env": {
     "node": true
@@ -24,11 +28,33 @@
     }
   },
   "rules": {
-    "space-before-function-paren": 0,
-    "react/prop-types": 0,
-    "react/jsx-handler-names": 0,
-    "react/jsx-fragments": 0,
-    "react/no-unused-prop-types": 0,
-    "import/export": 0
+    // Imports
+    "import/order": [
+      "error",
+      {
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+
+    // Typescript
+    "@typescript-eslint/no-empty-interface": [
+      "error",
+      {
+        "allowSingleExtends": true
+      }
+    ],
+
+    // JSX
+    "react/jsx-curly-brace-presence": ["error", "never"],
+    "react/jsx-boolean-value": ["error", "never"],
+    "react/react-in-jsx-scope": ["off"],
+    "react/prop-types": ["off"],
+
+    // General
+    // buggy one, so disable
+    "no-use-before-define": "off"
   }
 }

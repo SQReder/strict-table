@@ -1,11 +1,12 @@
-import * as React from 'react'
-import styles from './styles.module.css'
 import { Box } from '@material-ui/core'
+import * as React from 'react'
+import { FC } from 'react'
+import styles from './styles.module.css'
 
 interface Props {
   text: string
 }
 
-export const ExampleComponent = ({ text }: Props) => {
+export const ExampleComponent: FC<Props> = ({ text }) => {
   return <Box className={styles.test}>Example Component: {text}</Box>
 }

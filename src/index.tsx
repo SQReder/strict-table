@@ -7,6 +7,6 @@ interface Props {
   text: string
 }
 
-export const ExampleComponent: FC<Props> = ({ text }) => {
+export const StrictTable: FC<Props> = ({ text }) => {
   return <Box className={styles.test}>Example Component: {text}</Box>
 }

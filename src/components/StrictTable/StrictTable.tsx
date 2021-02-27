@@ -9,7 +9,7 @@ import {
 } from '@material-ui/core'
 import React, { ReactElement } from 'react'
 import { AnyObject } from '../../types/helpers'
-import { ColumnDef } from '../../types/model'
+import { ColumnDef, EnhancedCellRenderProps } from '../../types/model'
 import { DefaultCellRenderer } from '../cellRenderers'
 
 export interface StrictTableProps<Model extends AnyObject> {
@@ -34,11 +34,17 @@ export function StrictTable<Model extends AnyObject>({
         <TableBody>
           {rows.map((row) => (
             <TableRow>
-              {columns.map((column) => {
+              {columns.map((column, rowIndex) => {
                 const renderer = column.renderer ?? DefaultCellRenderer
                 const value = row[column.field]
+                const newVar: EnhancedCellRenderProps<AnyObject> = {
+                  value,
+                  rowIndex,
+                  column,
+                  model: row,
+                }
                 return (
-                  <TableCell width={column.width}>{renderer(value)}</TableCell>
+                  <TableCell width={column.width}>{renderer(newVar)}</TableCell>
                 )
               })}
             </TableRow>

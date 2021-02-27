@@ -1,10 +1,23 @@
 import React from 'react'
-import { CellRenderer } from '../types/model'
+import { StoryModel } from '../types/helpers'
+import { BasicCellRenderer, EnhancedCellRenderer } from '../types/model'
 
-export const DefaultCellRenderer: CellRenderer<unknown> = (value) => (
+export const DefaultCellRenderer: BasicCellRenderer<unknown> = ({ value }) => (
   <>{value}</>
 )
 
-export const PercentCellRenderer: CellRenderer<number> = (value) => (
+export const PercentCellRenderer: BasicCellRenderer<number> = ({ value }) => (
   <>{value}%</>
+)
+
+export const CoolCellRenderer: EnhancedCellRenderer<StoryModel, 'value'> = ({
+  rowIndex,
+  value,
+  column: { field },
+}) => (
+  <>
+    <div>Index: {rowIndex}</div>
+    <div>Field: {field}</div>
+    <div>Value: {value}</div>
+  </>
 )

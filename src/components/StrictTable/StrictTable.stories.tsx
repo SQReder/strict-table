@@ -1,11 +1,8 @@
 import { Meta, Story } from '@storybook/react/types-6-0'
 import React from 'react'
 import { StoryModel } from '../../types/helpers'
-import {
-  CoolCellRenderer,
-  DefaultCellRenderer,
-  PercentCellRenderer,
-} from '../cellRenderers'
+import { DefaultCellRenderer } from '../CellComponents'
+import { CoolCellRenderer, PercentCellRenderer } from '../cellRenderers'
 import { buildColumns } from '../helpers'
 import { StrictTable, StrictTableProps } from './StrictTable'
 

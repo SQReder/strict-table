@@ -9,8 +9,8 @@ import {
 } from '@material-ui/core'
 import React, { ReactElement } from 'react'
 import { AnyObject } from '../../types/helpers'
-import { ColumnDef, EnhancedCellRenderProps } from '../../types/model'
-import { DefaultCellRenderer } from '../cellRenderers'
+import { ColumnDef, EnhancedCellRenderer } from '../../types/model'
+import { DefaultCellRenderer } from '../CellComponents'
 
 export interface StrictTableProps<Model extends AnyObject> {
   columns: readonly ColumnDef<Model>[]
@@ -35,16 +35,18 @@ export function StrictTable<Model extends AnyObject>({
           {rows.map((row) => (
             <TableRow>
               {columns.map((column, rowIndex) => {
-                const renderer = column.renderer ?? DefaultCellRenderer
+                const renderer: EnhancedCellRenderer<AnyObject> =
+                  column.renderer ?? DefaultCellRenderer
                 const value = row[column.field]
-                const newVar: EnhancedCellRenderProps<AnyObject> = {
-                  value,
-                  rowIndex,
-                  column,
-                  model: row,
-                }
                 return (
-                  <TableCell width={column.width}>{renderer(newVar)}</TableCell>
+                  <TableCell width={column.width}>
+                    {renderer({
+                      value,
+                      rowIndex,
+                      column,
+                      model: row,
+                    })}
+                  </TableCell>
                 )
               })}
             </TableRow>

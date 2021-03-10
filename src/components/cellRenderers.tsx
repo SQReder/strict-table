@@ -1,13 +1,9 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { StoryModel } from '../types/helpers'
 import { BasicCellRenderer, EnhancedCellRenderer } from '../types/model'
 
-export const DefaultCellRenderer: BasicCellRenderer<unknown> = ({ value }) => (
-  <>{value}</>
-)
-
 export const PercentCellRenderer: BasicCellRenderer<number> = ({ value }) => (
-  <>{value}%</>
+  <Fragment>{value}%</Fragment>
 )
 
 export const CoolCellRenderer: EnhancedCellRenderer<StoryModel, 'value'> = ({
@@ -15,9 +11,9 @@ export const CoolCellRenderer: EnhancedCellRenderer<StoryModel, 'value'> = ({
   value,
   column: { field },
 }) => (
-  <>
+  <Fragment>
     <div>Index: {rowIndex}</div>
     <div>Field: {field}</div>
     <div>Value: {value}</div>
-  </>
+  </Fragment>
 )

@@ -26,7 +26,7 @@ export type EnhancedCellRenderer<
 export type CellRenderer<
   Model extends AnyObject,
   Field extends keyof Model = keyof Model & string
-> = (props: EnhancedCellRenderProps<Model, Field>) => ReactNode
+> = BasicCellRenderer<Model[Field]> | EnhancedCellRenderer<Model, Field>
 
 export interface ColumnDef<
   Model extends AnyObject,

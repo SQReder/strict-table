@@ -13,75 +13,29 @@ npm install --save strict-table
 
 ## Roadmap
 
-<table>
-  <thead>
-    <th>Feature</th>
-    <th>Status</th>
-  </thead>
-  <tbody>
-    <tr>
-      <td colspan=2'><strong>Column</strong></td>
-    </tr>
-    <tr>
-      <td>Column resizing</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Column groups</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Column reorder</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Column pinning</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Column spanning</td>
-      <td align='center'>🚧</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td colspan=2'><strong>Row</strong></td>
-    </tr>
-    <tr>
-      <td>Rows sorting</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Rows height</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Rows spanning</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Rows reorder</td>
-      <td align='center'>🚧</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td colspan=2'><strong>Selection</strong></td>
-    </tr>
-    <tr>
-      <td>Row selection</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Multi-row selection</td>
-      <td align='center'>🚧</td>
-    </tr>
-    <tr>
-      <td>Range selection</td>
-      <td align='center'>🚧</td>
-    </tr>
-  </tbody>
-</table>
+This is view-only solution, at least for this moment
+
+### Row
+
+- 🚧 Hovering
+- 🚧 Row groups
+- 🚧 Row selection
+
+### Column
+
+- 🚧 Column width
+- 🚧 Column style
+- 🚧 Column pin
+
+### Cell
+
+- ✅ Custom renders
+- 🚧 Cell events (click at least)
+- 🚧 Popup for overflowing content
+
+### General
+
+- 🚧 Sorting
 
 ## Usage
 
